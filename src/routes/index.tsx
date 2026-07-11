@@ -217,29 +217,41 @@ function SectionHeading({ children }: { children: React.ReactNode }) {
 function Role({
   title,
   company,
+  logo,
   period,
   bullets,
 }: {
   title: string;
   company: string;
+  logo?: string;
   period: string;
   bullets: string[];
 }) {
   return (
-    <div>
-      <div className="flex flex-wrap items-baseline justify-between gap-x-4">
-        <h3 className="font-serif text-lg font-bold" style={{ color: "#0f1b3d" }}>
-          {title} <span className="font-normal italic" style={{ color: "#1e3a5f" }}>· {company}</span>
-        </h3>
-        <p className="text-xs uppercase tracking-wider" style={{ color: "#3b6fa0" }}>
-          {period}
-        </p>
+    <div className="flex gap-4">
+      {logo && (
+        <img
+          src={logo}
+          alt={`${company} logo`}
+          className="h-12 w-12 flex-shrink-0 rounded-sm object-contain bg-white"
+          style={{ border: "1px solid #e8edf3" }}
+        />
+      )}
+      <div className="flex-1">
+        <div className="flex flex-wrap items-baseline justify-between gap-x-4">
+          <h3 className="font-serif text-lg font-bold" style={{ color: "#0f1b3d" }}>
+            {title} <span className="font-normal italic" style={{ color: "#1e3a5f" }}>· {company}</span>
+          </h3>
+          <p className="text-xs uppercase tracking-wider" style={{ color: "#3b6fa0" }}>
+            {period}
+          </p>
+        </div>
+        <ul className="mt-2 space-y-1.5 pl-5 list-disc marker:text-[color:#3b6fa0]">
+          {bullets.map((b) => (
+            <li key={b}>{b}</li>
+          ))}
+        </ul>
       </div>
-      <ul className="mt-2 space-y-1.5 pl-5 list-disc marker:text-[color:#3b6fa0]">
-        {bullets.map((b) => (
-          <li key={b}>{b}</li>
-        ))}
-      </ul>
     </div>
   );
 }
