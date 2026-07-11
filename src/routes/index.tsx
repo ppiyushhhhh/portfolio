@@ -138,20 +138,23 @@ function Index() {
         </AnimatePresence>
 
         {/* prev / next */}
-        {page !== "cover" && (
-          <div className="mx-auto mt-6 flex max-w-3xl items-center justify-between px-2 font-[family-name:var(--font-hand)] text-lg" style={{ color: "var(--color-accent)" }}>
-            {prev ? (
-              <button onClick={() => go(prev.id)} className="inline-flex items-center gap-2 hover:opacity-70">
-                <ArrowLeft size={18} /> {prev.label}
-              </button>
-            ) : <span />}
-            {next ? (
-              <button onClick={() => go(next.id)} className="inline-flex items-center gap-2 hover:opacity-70">
-                {next.label} <ArrowRight size={18} />
-              </button>
-            ) : <span />}
-          </div>
-        )}
+        <div className="mx-auto mt-8 flex max-w-3xl items-center justify-between gap-4 px-2 font-[family-name:var(--font-hand)] text-lg" style={{ color: "var(--color-accent)" }}>
+          {prev ? (
+            <button onClick={() => go(prev.id)} className="inline-flex items-center gap-2 rounded-sm px-3 py-1.5 hover:opacity-70" style={{ border: "1px dashed var(--color-accent)" }}>
+              <ArrowLeft size={18} /> {prev.label}
+            </button>
+          ) : <span />}
+          {next ? (
+            <button
+              onClick={() => go(next.id)}
+              className="inline-flex items-center gap-2 rounded-sm border-2 px-4 py-1.5 font-bold shadow-[3px_3px_0_0_var(--color-accent)] transition-transform hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-[2px_2px_0_0_var(--color-accent)]"
+              style={{ borderColor: "var(--color-accent)", color: "var(--color-accent)", backgroundColor: "var(--color-paper)" }}
+            >
+              Next → {next.label} <ArrowRight size={18} />
+            </button>
+          ) : <span />}
+        </div>
+
       </div>
     </main>
     </MotionConfig>
