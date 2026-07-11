@@ -76,7 +76,6 @@ function Index() {
           <Role
             title="IT Office Assistant"
             company="Runtime Solutions"
-            logo={runtimeLogo.url}
             period="Dec 2024 – Present"
             bullets={[
               "Managed end-to-end ITSM ticket lifecycle including incidents, service requests, and escalations across multiple locations using ManageEngine ServiceDesk Plus.",
