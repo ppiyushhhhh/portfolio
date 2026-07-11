@@ -144,7 +144,7 @@ function Index() {
               onClick={() => go(prev.id)}
               aria-label={`Previous page: ${prev.label}`}
               className="inline-flex items-center gap-2 rounded-sm border-2 px-4 py-1.5 font-bold shadow-[3px_3px_0_0_var(--color-accent)] transition-transform hover:translate-x-[-1px] hover:translate-y-[1px] hover:shadow-[2px_2px_0_0_var(--color-accent)]"
-              style={{ borderColor: "var(--color-accent)", color: "var(--color-accent)", backgroundColor: "var(--color-paper)" }}
+              style={{ borderColor: "var(--color-ink)", color: "var(--color-ink)", backgroundColor: "var(--color-paper)", boxShadow: "3px 3px 0 0 var(--color-ink)" }}
             >
               <ArrowLeft size={18} /> ← Prev {prev.label}
             </button>
@@ -153,7 +153,7 @@ function Index() {
             <button
               onClick={() => go(next.id)}
               className="inline-flex items-center gap-2 rounded-sm border-2 px-4 py-1.5 font-bold shadow-[3px_3px_0_0_var(--color-accent)] transition-transform hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-[2px_2px_0_0_var(--color-accent)]"
-              style={{ borderColor: "var(--color-accent)", color: "var(--color-accent)", backgroundColor: "var(--color-paper)" }}
+              style={{ borderColor: "var(--color-ink)", color: "var(--color-ink)", backgroundColor: "var(--color-paper)", boxShadow: "3px 3px 0 0 var(--color-ink)" }}
             >
               Next → {next.label} <ArrowRight size={18} />
             </button>
