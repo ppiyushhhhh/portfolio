@@ -626,14 +626,6 @@ const TIMELINE = [
       "CI/CD via GitHub Actions, Trivy scans, Prometheus/Grafana observability.",
     ],
   },
-  {
-    year: "Next",
-    title: "Cloud & DevOps Engineer",
-    org: "→ role in progress",
-    period: "2025 →",
-    bullets: ["Where this notebook is heading."],
-    future: true,
-  },
 ];
 
 function ExperiencePage() {
