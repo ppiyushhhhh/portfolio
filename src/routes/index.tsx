@@ -21,6 +21,8 @@ import {
   Linkedin,
   FileDown,
   ExternalLink,
+  Volume2,
+  VolumeX,
 } from "lucide-react";
 
 export const Route = createFileRoute("/")({
