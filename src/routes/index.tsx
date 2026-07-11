@@ -246,7 +246,7 @@ function CoverPage({ go }: { go: (id: PageId) => void }) {
           Engineering Notebook
         </p>
         <div className="mx-auto mt-4 h-[2px] w-24" style={{ backgroundColor: "var(--color-ink)" }} />
-        <p className="mt-3 font-[family-name:var(--font-mono)] text-xs" style={{ color: "var(--color-ink)", opacity: 0.6 }}>
+        <p className="mt-3 font-[family-name:var(--font-mono)] text-xs" style={{ color: "var(--color-ink)", opacity: 0.78 }}>
           Vol. I · Cloud & DevOps · 2022 — Present
         </p>
       </div>
@@ -681,7 +681,7 @@ function TimelineEntry({ item, index }: { item: (typeof TIMELINE)[number]; index
       <h3 className="mt-0.5 font-[family-name:var(--font-hand)] text-2xl font-bold" style={{ color: "var(--color-ink)" }}>
         {item.title} <span className="font-normal italic" style={{ color: "var(--color-accent)" }}>· {item.org}</span>
       </h3>
-      <p className="text-xs" style={{ color: "var(--color-ink)", opacity: 0.6 }}>{item.period}</p>
+      <p className="text-xs" style={{ color: "var(--color-ink)", opacity: 0.78 }}>{item.period}</p>
       <ul className="mt-2 space-y-1 pl-4 text-[14.5px]" style={{ color: "var(--color-ink)" }}>
         {item.bullets.map((b) => (
           <li key={b} className="relative">
