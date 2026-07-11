@@ -37,7 +37,7 @@ function Index() {
           <h2 className="mb-3 text-xl font-semibold">Experience</h2>
 
           <div className="mb-5 flex gap-4">
-            <img src={runtimeLogo.url} alt="Runtime Solutions logo" className="h-12 w-12 flex-shrink-0 object-contain" />
+            <img src={runtimeLogo.url} alt="Runtime Solutions logo" className="h-12 w-12 flex-shrink-0 object-contain transition-transform duration-200 hover:scale-110 hover:rotate-3 cursor-pointer" />
             <div className="flex-1">
             <h3 className="font-semibold">IT Office Assistant — Runtime Solutions</h3>
             <p className="text-sm text-gray-700">Dec 2024 – Present</p>
@@ -53,7 +53,7 @@ function Index() {
           </div>
 
           <div className="flex gap-4">
-            <img src={credenceLogo.url} alt="Credence Infotech logo" className="h-12 w-12 flex-shrink-0 object-contain" />
+            <img src={credenceLogo.url} alt="Credence Infotech logo" className="h-12 w-12 flex-shrink-0 object-contain transition-transform duration-200 hover:scale-110 hover:rotate-3 cursor-pointer" />
             <div className="flex-1">
             <h3 className="font-semibold">IT Service Management Consultant — Credence Infotech</h3>
             <p className="text-sm text-gray-700">Feb 2022 – Oct 2024</p>
