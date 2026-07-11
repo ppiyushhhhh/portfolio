@@ -77,14 +77,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "Piyush Prasad — Aspiring Cloud & DevOps Engineer" },
+      { name: "description", content: "Portfolio of Piyush Prasad, aspiring Cloud & DevOps engineer with experience in AWS, CI/CD, Nginx, and DevSecOps." },
+      { name: "author", content: "Piyush Prasad" },
+      { property: "og:title", content: "Piyush Prasad — Aspiring Cloud & DevOps Engineer" },
+      { property: "og:description", content: "Portfolio of Piyush Prasad, aspiring Cloud & DevOps engineer." },
       { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:card", content: "summary" },
     ],
     links: [
       {
