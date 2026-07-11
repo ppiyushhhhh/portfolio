@@ -88,7 +88,6 @@ function Index() {
           <Role
             title="IT Service Management Consultant"
             company="Credence Infotech"
-            logo={credenceLogo.url}
             period="Feb 2022 – Oct 2024"
             bullets={[
               "Delivered ITSM operations aligned with ITIL best practices.",
