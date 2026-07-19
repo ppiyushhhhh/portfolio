@@ -545,7 +545,7 @@ function Skills() {
         <SectionLabel n="003" label="THE STACK" />
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:gap-16">
           <div className="lg:col-span-4">
-            <h2 className="display text-[56px] leading-[0.88] md:text-[80px]">
+            <h2 className="display text-[44px] leading-[0.88] sm:text-[56px] md:text-[80px]">
               THE
               <br />
               <span className="text-cobalt">STACK</span>
