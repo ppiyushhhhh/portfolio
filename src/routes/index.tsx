@@ -23,6 +23,7 @@ import githubLogo from "@/assets/github-logo.jpg";
 import awsLogo from "@/assets/aws-logo.jpg";
 import runtimeLogo from "@/assets/runtime-logo.png";
 import credenceLogo from "@/assets/credence-logo.png";
+import jkCollegeLogo from "@/assets/jk-college-logo.png";
 
 export const Route = createFileRoute("/")({
   component: PortfolioPage,
@@ -115,7 +116,7 @@ const CERTS: { name: string; issuer: string; url?: string; logo?: string }[] = [
 ];
 
 const EDUCATION = [
-  { period: "Jan 2022 — Mar 2025", degree: "Bachelor of Commerce (B.Com)", school: "Tilak Education Society's J.K. College of Science & Commerce", extra: "University of Mumbai" },
+  { period: "Jan 2022 — Mar 2025", degree: "Bachelor of Commerce (B.Com)", school: "Tilak Education Society's J.K. College of Science & Commerce", extra: "University of Mumbai", logo: jkCollegeLogo },
   { period: "Aug 2019 — Jun 2021", degree: "Higher Secondary (Commerce)", school: "Allen Swami Vivekanand Junior College", extra: "MSSBHS" },
   { period: "Jun 2008 — Mar 2019", degree: "Secondary School", school: "Tilak Education Society's Tilak Global School", extra: "MSSBHS" },
 ];
@@ -701,9 +702,20 @@ function Certifications() {
                   className="border border-[#D1D1CB] bg-white/50 p-5"
                 >
                   <div className="mono text-cobalt text-[10px]">{e.period}</div>
-                  <div className="mt-3 font-semibold">{e.degree}</div>
-                  <div className="mt-1 text-sm text-carbon/80">{e.school}</div>
-                  <div className="mono mt-2 text-[10px] text-carbon/60">{e.extra}</div>
+                  <div className="mt-3 flex items-start gap-3">
+                    {(e as any).logo && (
+                      <img
+                        src={(e as any).logo}
+                        alt={`${e.school} logo`}
+                        className="h-10 w-10 shrink-0 rounded-sm bg-white object-contain p-0.5 ring-1 ring-[#D1D1CB]"
+                      />
+                    )}
+                    <div className="min-w-0">
+                      <div className="font-semibold">{e.degree}</div>
+                      <div className="mt-1 text-sm text-carbon/80">{e.school}</div>
+                      <div className="mono mt-2 text-[10px] text-carbon/60">{e.extra}</div>
+                    </div>
+                  </div>
                 </motion.div>
               ))}
             </div>
