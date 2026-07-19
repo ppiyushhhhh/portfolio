@@ -149,11 +149,30 @@ function BlueprintGrid() {
 
 function TopNav() {
   const [scrolled, setScrolled] = useState(false);
+  const [active, setActive] = useState<string>("hero");
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+  useEffect(() => {
+    const ids = ["hero", ...NAV.map((n) => n.id)];
+    const sections = ids
+      .map((id) => document.getElementById(id))
+      .filter((el): el is HTMLElement => !!el);
+    if (sections.length === 0) return;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visible = entries
+          .filter((e) => e.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+        if (visible) setActive(visible.target.id);
+      },
+      { rootMargin: "-40% 0px -55% 0px", threshold: [0, 0.25, 0.5, 0.75, 1] },
+    );
+    sections.forEach((s) => observer.observe(s));
+    return () => observer.disconnect();
   }, []);
   return (
     <header
@@ -167,12 +186,28 @@ function TopNav() {
           <line x1="14" y1="2" x2="14" y2="26" stroke="#1A4BFF" strokeWidth="1" />
           <line x1="2" y1="14" x2="26" y2="14" stroke="#1A4BFF" strokeWidth="1" />
         </svg>
-        <nav className="hidden items-center gap-8 md:flex">
-          {NAV.map((n) => (
-            <a key={n.id} href={`#${n.id}`} className="mono text-[11px] hover:text-cobalt transition-colors">
-              {n.label}
-            </a>
-          ))}
+        <nav className="hidden items-center gap-8 md:flex" aria-label="Section navigation">
+          {NAV.map((n) => {
+            const isActive = active === n.id;
+            return (
+              <a
+                key={n.id}
+                href={`#${n.id}`}
+                aria-current={isActive ? "location" : undefined}
+                className={`mono relative text-[11px] transition-colors ${
+                  isActive ? "text-cobalt" : "text-carbon hover:text-cobalt"
+                }`}
+              >
+                {n.label}
+                <span
+                  aria-hidden
+                  className={`absolute -bottom-1.5 left-0 h-[2px] bg-cobalt transition-all duration-300 ${
+                    isActive ? "w-full" : "w-0"
+                  }`}
+                />
+              </a>
+            );
+          })}
         </nav>
         <a
           href="#contact"
@@ -181,9 +216,17 @@ function TopNav() {
           Menu
         </a>
       </div>
+      {/* Mobile section indicator */}
+      <div className="mono flex items-center justify-between border-t border-[#D1D1CB] bg-[#F4F4F2]/90 px-6 py-2 text-[10px] backdrop-blur-md md:hidden">
+        <span className="text-carbon/50">SECTION</span>
+        <span className="text-cobalt">
+          {(NAV.find((n) => n.id === active)?.label) ?? "INTRO"}
+        </span>
+      </div>
     </header>
   );
 }
+
 
 /* ---------- Hero ---------- */
 
