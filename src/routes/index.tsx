@@ -692,7 +692,7 @@ function Certifications() {
             </ul>
           </div>
           <div className="lg:col-span-5">
-            <h2 className="display text-[48px] leading-[0.9] md:text-[72px]">EDUCATION</h2>
+            <h2 className="display text-[40px] leading-[0.9] sm:text-[48px] md:text-[72px]">EDUCATION</h2>
             <div className="mt-10 space-y-4">
               {EDUCATION.map((e) => (
                 <motion.div
