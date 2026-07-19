@@ -512,7 +512,7 @@ function Experience() {
             <span className="mono inline-block border border-cobalt px-3 py-1 text-cobalt text-[10px]">
               {job.type}
             </span>
-            <h3 className="display mt-6 text-[40px] leading-[0.95] md:text-[56px]">{job.role.toUpperCase()}</h3>
+            <h3 className="display mt-6 text-[32px] leading-[0.95] sm:text-[40px] md:text-[56px]">{job.role.toUpperCase()}</h3>
             <p className="mono mt-3 text-cobalt text-[11px]">{job.period}</p>
             <ul className="mt-10 space-y-6">
               {job.bullets.map((b, i) => (
