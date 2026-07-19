@@ -21,6 +21,7 @@ import canonicalLogo from "@/assets/canonical-logo.jpg";
 import dockerLogo from "@/assets/docker-logo.jpg";
 import githubLogo from "@/assets/github-logo.jpg";
 import awsLogo from "@/assets/aws-logo.jpg";
+import runtimeLogo from "@/assets/runtime-logo.png";
 
 export const Route = createFileRoute("/")({
   component: PortfolioPage,
