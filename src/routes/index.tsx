@@ -613,8 +613,12 @@ function Certifications() {
                   viewport={{ once: true }}
                   className="flex items-center gap-5 py-5"
                 >
-                  <div className="mono flex h-10 w-10 flex-shrink-0 items-center justify-center border border-[#D1D1CB] text-cobalt text-[10px]">
-                    {c.issuer.slice(0, 2).toUpperCase()}
+                  <div className="mono flex h-10 w-10 flex-shrink-0 items-center justify-center overflow-hidden border border-[#D1D1CB] text-cobalt text-[10px]">
+                    {c.logo ? (
+                      <img src={c.logo} alt={`${c.issuer} logo`} className="h-full w-full object-cover" />
+                    ) : (
+                      c.issuer.slice(0, 2).toUpperCase()
+                    )}
                   </div>
                   <div className="flex-1">
                     {c.url ? (
