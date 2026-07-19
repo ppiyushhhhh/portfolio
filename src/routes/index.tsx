@@ -201,10 +201,6 @@ function TopNav() {
     >
       <div className="mx-auto flex max-w-[1400px] items-center justify-between px-6 py-5 md:px-10">
         <a href="#hero" className="mono font-medium text-carbon">PP</a>
-        <svg width="28" height="28" viewBox="0 0 28 28" className="hidden md:block" aria-hidden>
-          <line x1="14" y1="2" x2="14" y2="26" stroke="#1A4BFF" strokeWidth="1" />
-          <line x1="2" y1="14" x2="26" y2="14" stroke="#1A4BFF" strokeWidth="1" />
-        </svg>
         <nav className="hidden items-center gap-8 md:flex" aria-label="Section navigation">
           {NAV.map((n) => {
             const isActive = active === n.id;
