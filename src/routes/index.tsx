@@ -882,7 +882,7 @@ function GithubActivity() {
       <div className="mx-auto max-w-[1400px]">
         <SectionLabel n="005" label="GITHUB ACTIVITY" />
         <div className="mb-10 flex flex-wrap items-end justify-between gap-6">
-          <h2 className="display text-[48px] leading-[0.9] md:text-[72px]">
+          <h2 className="display text-[40px] leading-[0.9] sm:text-[48px] md:text-[72px]">
             LIVE
             <br />
             <span className="text-cobalt">COMMITS</span>
