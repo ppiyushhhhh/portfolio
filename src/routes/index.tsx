@@ -7,6 +7,7 @@ import {
   Copy,
   Check,
   Download,
+  Eye,
   Github,
   Linkedin,
   Mail,
