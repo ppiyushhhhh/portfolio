@@ -92,13 +92,13 @@ const SKILL_CATS = [
   { label: "ITSM", tags: ["ManageEngine ServiceDesk Plus", "ITIL Practices", "SLA Management"] },
 ];
 
-const CERTS: { name: string; issuer: string; url?: string }[] = [
-  { name: "DevOps Complete Course Specialization", issuer: "Packt (Coursera)", url: "https://www.coursera.org/account/accomplishments/specialization/592LMXYN7KZK" },
+const CERTS: { name: string; issuer: string; url?: string; logo?: string }[] = [
+  { name: "DevOps Complete Course Specialization", issuer: "Packt (Coursera)", url: "https://www.coursera.org/account/accomplishments/specialization/592LMXYN7KZK", logo: packtLogo.url },
   { name: "Ubuntu Linux Professional Certificate", issuer: "Canonical" },
   { name: "Career Essentials in GitHub Professional Certificate", issuer: "GitHub" },
   { name: "AWS Knowledge: Cloud Essentials — Training Badge", issuer: "Amazon Web Services" },
   { name: "Linux System Upgrade and Patch Management", issuer: "LinkedIn Learning" },
-  { name: "DNS", issuer: "Packt" },
+  { name: "DNS", issuer: "Packt", logo: packtLogo.url },
 ];
 
 const EDUCATION = [
