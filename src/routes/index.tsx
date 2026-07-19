@@ -19,6 +19,7 @@ import packtLogo from "@/assets/packt-logo.jpg.asset.json";
 import googleLogo from "@/assets/google-logo.jpg.asset.json";
 import canonicalLogo from "@/assets/canonical-logo.jpg.asset.json";
 import dockerLogo from "@/assets/docker-logo.jpg.asset.json";
+import githubLogo from "@/assets/github-logo.jpg.asset.json";
 
 export const Route = createFileRoute("/")({
   component: PortfolioPage,
