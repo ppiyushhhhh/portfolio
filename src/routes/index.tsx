@@ -735,7 +735,6 @@ function relTime(iso: string) {
 }
 
 function RepoCard({ repo }: { repo: Repo }) {
-  const initialCache = lsRead<Commit | null>(`commit:${repo.name}`);
   const { data: commit } = useQuery({
     queryKey: ["commit", repo.name],
     queryFn: () => fetchLatestCommit(repo.name),
@@ -743,9 +742,8 @@ function RepoCard({ repo }: { repo: Repo }) {
     gcTime: CACHE_MAX_AGE,
     retry: 1,
     refetchOnWindowFocus: false,
-    initialData: initialCache?.v,
-    initialDataUpdatedAt: initialCache?.t,
   });
+
   return (
     <a
       href={repo.html_url}
