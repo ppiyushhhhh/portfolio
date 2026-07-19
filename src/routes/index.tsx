@@ -15,12 +15,12 @@ import {
   ChevronDown,
   Loader2,
 } from "lucide-react";
-import packtLogo from "@/assets/packt-logo.jpg.asset.json";
-import googleLogo from "@/assets/google-logo.jpg.asset.json";
-import canonicalLogo from "@/assets/canonical-logo.jpg.asset.json";
-import dockerLogo from "@/assets/docker-logo.jpg.asset.json";
-import githubLogo from "@/assets/github-logo.jpg.asset.json";
-import awsLogo from "@/assets/aws-logo.jpg.asset.json";
+import packtLogo from "@/assets/packt-logo.jpg";
+import googleLogo from "@/assets/google-logo.jpg";
+import canonicalLogo from "@/assets/canonical-logo.jpg";
+import dockerLogo from "@/assets/docker-logo.jpg";
+import githubLogo from "@/assets/github-logo.jpg";
+import awsLogo from "@/assets/aws-logo.jpg";
 
 export const Route = createFileRoute("/")({
   component: PortfolioPage,
