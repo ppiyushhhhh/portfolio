@@ -13,7 +13,7 @@ export const Route = createFileRoute("/resume")({
 function ResumeViewer() {
   return (
     <div
-      className="fixed inset-0 bg-[#1a1a1a] flex flex-col"
+      className="fixed inset-0 bg-[#1a1a1a] flex flex-col h-[100dvh]"
       onContextMenu={(e) => e.preventDefault()}
     >
       <header className="flex items-center justify-between gap-3 border-b border-white/10 bg-black px-4 py-3 text-white sm:px-6">
