@@ -34,8 +34,9 @@ jobs:
           SMTP_PORT: ${{ secrets.SMTP_PORT }}
           SMTP_USER: ${{ secrets.SMTP_USER }}
           SMTP_PASS: ${{ secrets.SMTP_PASS }}
-          REPORT_TO: ${{ secrets.REPORT_TO }}
+          REPORT_TO: ${{ secrets.REPORT_TO || 'hello@piyushprasad.in' }}
           REPORT_FROM: ${{ secrets.REPORT_FROM }}
+          ALERT_TO: ${{ secrets.ALERT_TO }}
         run: node generate-report.mjs
 
       - name: Upload report artifact
