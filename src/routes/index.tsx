@@ -1028,7 +1028,7 @@ function CvDock() {
   const [open, setOpen] = useState(false);
   return (
     <div
-      className="fixed bottom-6 right-6 z-30 hidden sm:block"
+      className="fixed bottom-4 right-4 z-30 sm:bottom-6 sm:right-6"
       onMouseEnter={() => setOpen(true)}
       onMouseLeave={() => setOpen(false)}
     >
@@ -1036,7 +1036,7 @@ function CvDock() {
         initial={false}
         animate={{ opacity: open ? 1 : 0, y: open ? 0 : 10, pointerEvents: open ? "auto" : "none" }}
         transition={{ duration: 0.2 }}
-        className="mb-3 w-64 border border-[#D1D1CB] bg-white p-4 shadow-lg"
+        className="mb-3 hidden w-64 border border-[#D1D1CB] bg-white p-4 shadow-lg sm:block"
       >
         <div className="mono text-[10px] text-carbon/60">RESUME · 2026</div>
         <div className="display mt-2 text-[22px] leading-[0.95]">
@@ -1053,14 +1053,14 @@ function CvDock() {
           target="_blank"
           rel="noreferrer"
           aria-label="View resume in new tab"
-          className="mono inline-flex items-center gap-2 bg-carbon px-4 py-3 text-white text-[11px] shadow-lg transition-colors hover:bg-cobalt focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cobalt focus-visible:ring-offset-2"
+          className="mono inline-flex shrink-0 items-center gap-2 whitespace-nowrap bg-carbon px-3 py-2.5 text-[10px] text-white shadow-lg transition-colors hover:bg-cobalt focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cobalt focus-visible:ring-offset-2 sm:px-4 sm:py-3 sm:text-[11px]"
         >
-          <Eye className="h-3.5 w-3.5" />
-          VIEW RESUME
+          <Eye className="h-3.5 w-3.5 shrink-0" />
+          <span>VIEW RESUME</span>
         </a>
       </div>
-
     </div>
+
   );
 }
 
