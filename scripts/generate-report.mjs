@@ -521,7 +521,10 @@ function drawInfoCard(doc, title, rows, x, y, w) {
 
 function generatePdf(data, outPath) {
   return new Promise((resolve, reject) => {
-    const doc = new PDFDocument({ size: "A4", margin: MARGIN, bufferPages: true });
+    // Page margins are set to 0 so absolutely-positioned text near page
+    // edges (footer at y ≈ 814) does not trigger PDFKit's auto-pagination.
+    // Our own MARGIN constant governs the visible layout.
+    const doc = new PDFDocument({ size: "A4", margin: 0, bufferPages: true });
     const stream = fs.createWriteStream(outPath);
     doc.pipe(stream);
 
