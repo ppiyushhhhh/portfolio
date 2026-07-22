@@ -228,7 +228,46 @@ async function collectData() {
   };
   data.healthScore = computeHealthScore(data);
   data.recommendations = buildRecommendations(data);
+  data.git = collectGitInfo();
   return data;
+}
+
+function collectGitInfo() {
+  const env = process.env;
+  const repository = env.GITHUB_REPOSITORY || null;
+  const branch = env.GITHUB_REF_NAME || null;
+  const workflow = env.GITHUB_WORKFLOW || null;
+  const runId = env.GITHUB_RUN_ID || null;
+  const server = env.GITHUB_SERVER_URL || "https://github.com";
+  const actor = env.GITHUB_ACTOR || null;
+  const event = env.GITHUB_EVENT_NAME || null;
+  const repoUrl = repository ? `${server}/${repository}` : null;
+  const runUrl = repository && runId ? `${repoUrl}/actions/runs/${runId}` : null;
+
+  let commitHash = env.GITHUB_SHA ? env.GITHUB_SHA.slice(0, 7) : null;
+  let commitAuthor = null;
+  let commitDate = null;
+  let commitMessage = null;
+  try {
+    const r = spawnSync(
+      "git",
+      ["log", "-1", "--pretty=format:%h%x1f%an%x1f%ad%x1f%s", "--date=iso-strict"],
+      { encoding: "utf8" },
+    );
+    if (r.status === 0 && r.stdout) {
+      const [h, an, ad, s] = r.stdout.split("\x1f");
+      if (h) commitHash = h;
+      commitAuthor = an || null;
+      commitDate = ad || null;
+      commitMessage = s || null;
+    }
+  } catch {
+    // git absent — leave nulls
+  }
+  return {
+    repository, branch, workflow, runId, runUrl, repoUrl, actor, event,
+    commitHash, commitAuthor, commitDate, commitMessage,
+  };
 }
 
 function computeHealthScore(d) {
