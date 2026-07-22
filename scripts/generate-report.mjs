@@ -403,18 +403,30 @@ function drawFooter(doc, data, pageNum, total) {
 
   // Contact row (clickable) above the footer rule
   const cy = y - 18;
-  const linkOpts = (href) => ({
-    link: href, underline: true, lineBreak: false, continued: true,
+  doc.font("Helvetica").fontSize(7.5);
+  const items = [
+    { label: CONTACT.email, href: `mailto:${CONTACT.email}` },
+    { label: CONTACT.phone, href: `tel:${CONTACT.phone.replace(/\s/g, "")}` },
+    { label: CONTACT.linkedinLabel, href: CONTACT.linkedin },
+    { label: CONTACT.githubLabel, href: CONTACT.github },
+  ];
+  const sep = "  ·  ";
+  const sepW = doc.widthOfString(sep);
+  const totalW = items.reduce((s, it) => s + doc.widthOfString(it.label), 0)
+    + sepW * (items.length - 1);
+  let cx = MARGIN + (w - totalW) / 2;
+  items.forEach((it, i) => {
+    const tw = doc.widthOfString(it.label);
+    doc.fillColor(COLORS.cobalt)
+      .text(it.label, cx, cy, { link: it.href, underline: true, width: tw + 2, lineBreak: false });
+    cx += tw;
+    if (i < items.length - 1) {
+      doc.fillColor(COLORS.muted)
+        .text(sep, cx, cy, { width: sepW + 2, lineBreak: false, link: null, underline: false });
+      cx += sepW;
+    }
   });
-  const sepOpts = { link: null, underline: false, lineBreak: false, continued: true };
-  doc.font("Helvetica").fontSize(7.5).fillColor(COLORS.cobalt);
-  doc.text(CONTACT.email, MARGIN, cy, linkOpts(`mailto:${CONTACT.email}`));
-  doc.fillColor(COLORS.muted).text("  ·  ", sepOpts).fillColor(COLORS.cobalt);
-  doc.text(CONTACT.phone, linkOpts(`tel:${CONTACT.phone.replace(/\s/g, "")}`));
-  doc.fillColor(COLORS.muted).text("  ·  ", sepOpts).fillColor(COLORS.cobalt);
-  doc.text(CONTACT.linkedinLabel, linkOpts(CONTACT.linkedin));
-  doc.fillColor(COLORS.muted).text("  ·  ", sepOpts).fillColor(COLORS.cobalt);
-  doc.text(CONTACT.githubLabel, { link: CONTACT.github, underline: true, lineBreak: false });
+
 
   doc.strokeColor(COLORS.line).lineWidth(0.5)
     .moveTo(MARGIN, y - 6).lineTo(PAGE.w - MARGIN, y - 6).stroke();
