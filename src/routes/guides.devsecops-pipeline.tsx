@@ -32,12 +32,12 @@ function GuidePage() {
   return (
     <main className="min-h-screen bg-white text-neutral-900">
       <div className="mx-auto max-w-3xl px-6 py-16 md:py-24">
-        <nav className="mb-10 text-xs uppercase tracking-[0.2em] text-neutral-500">
+        <nav className="mb-10 text-xs uppercase tracking-[0.2em] text-neutral-700">
           <Link to="/" className="hover:text-neutral-900">← Back to portfolio</Link>
         </nav>
 
         <header className="mb-12 border-b border-neutral-200 pb-8">
-          <p className="mb-3 text-xs uppercase tracking-[0.25em] text-neutral-500">
+          <p className="mb-3 text-xs uppercase tracking-[0.25em] text-neutral-700">
             DevSecOps · Guide · 2026
           </p>
           <h1 className="text-3xl md:text-5xl font-semibold leading-tight tracking-tight">
@@ -188,7 +188,7 @@ jobs:
               SBOMs and image signing next, and layer on runtime monitoring once
               the basics are boring. The best security work is invisible.
             </p>
-            <p className="mt-6 text-sm text-neutral-500">
+            <p className="mt-6 text-sm text-neutral-700">
               Written by Piyush Prasad — Cloud &amp; DevOps Engineer.{" "}
               <Link to="/" className="underline">Back to portfolio</Link>.
             </p>
