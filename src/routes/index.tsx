@@ -362,7 +362,7 @@ function Hero() {
 
 function SectionLabel({ n, label, dark = false }: { n: string; label: string; dark?: boolean }) {
   return (
-    <div className={`mono mb-16 flex items-center gap-4 text-[11px] ${dark ? "text-white/60" : "text-carbon/70"}`}>
+    <div className={`mono mb-16 flex items-center gap-4 text-[11px] ${dark ? "text-white/80" : "text-carbon/70"}`}>
       <span className="text-cobalt">{n}</span>
       <span>/ {label}</span>
       <span className={`ml-4 h-px flex-1 ${dark ? "bg-white/20" : "bg-[#D1D1CB]"}`} />
@@ -484,7 +484,7 @@ function Experience() {
                           )
                         ) : (
                           <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-sm border border-white/15 bg-white/[0.04]">
-                            <span className="mono text-[10px] text-white/60">
+                            <span className="mono text-[10px] text-white/80">
                               {e.company.split(" ").map((w) => w[0]).join("").slice(0, 2)}
                             </span>
                           </div>
@@ -493,7 +493,7 @@ function Experience() {
                           <div className={`mono text-[12px] ${isActive ? "text-cobalt" : "text-white"}`}>
                             {e.company.toUpperCase()}
                           </div>
-                          <div className="mono mt-1 text-[10px] text-white/50">{e.period}</div>
+                          <div className="mono mt-1 text-[10px] text-white/75">{e.period}</div>
                         </div>
                       </div>
                     </button>
@@ -1023,7 +1023,7 @@ function Contact() {
             </div>
           </div>
         </div>
-        <div className="mono mt-24 flex flex-wrap items-center justify-between gap-4 border-t border-white/10 pt-8 text-[10px] text-white/50">
+        <div className="mono mt-24 flex flex-wrap items-center justify-between gap-4 border-t border-white/10 pt-8 text-[10px] text-white/75">
           <span>© 2026 PIYUSH PRASAD — ALL RIGHTS RESERVED</span>
           <a href="/guides/devsecops-pipeline" className="text-white/70 hover:text-cobalt underline underline-offset-4">
             GUIDE · BUILDING A SECURE CI/CD PIPELINE

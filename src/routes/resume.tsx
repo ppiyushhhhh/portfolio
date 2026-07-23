@@ -42,7 +42,7 @@ function ResumeViewer() {
         <div className="min-w-0 truncate font-mono text-[10px] uppercase tracking-widest sm:text-[11px]">
           Piyush Prasad · Resume
         </div>
-        <div className="shrink-0 font-mono text-[9px] uppercase tracking-wider text-white/50 sm:text-[10px]">
+        <div className="shrink-0 font-mono text-[9px] uppercase tracking-wider text-white/75 sm:text-[10px]">
           View Only
         </div>
       </header>
@@ -54,7 +54,7 @@ function ResumeViewer() {
             aria-live="polite"
           >
             <div className="h-8 w-8 animate-spin rounded-full border-2 border-white/20 border-t-white/80" />
-            <div className="font-mono text-[10px] uppercase tracking-widest text-white/50">
+            <div className="font-mono text-[10px] uppercase tracking-widest text-white/75">
               Loading resume…
             </div>
           </div>
