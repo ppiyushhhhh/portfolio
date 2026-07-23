@@ -288,8 +288,9 @@ function Hero() {
               transition={{ duration: 0.8, delay: 0.5, ease: [0.2, 0.8, 0.2, 1] }}
               className="display text-[64px] leading-[0.88] md:text-[96px] lg:text-[128px]"
             >
-              <span className="block">PIYUSH</span>
-              <span className="block text-cobalt">PRASAD</span>
+              <span className="sr-only">Piyush Prasad — Cloud & DevOps Engineer</span>
+              <span className="block" aria-hidden="true">PIYUSH</span>
+              <span className="block text-cobalt" aria-hidden="true">PRASAD</span>
             </motion.h1>
 
             <motion.p
